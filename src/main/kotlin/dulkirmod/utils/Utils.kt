@@ -53,7 +53,6 @@ object Utils {
 	fun isInSkyblock(): Boolean {
 		if (mc.theWorld == null || mc.thePlayer == null) return false
         if (mc.isSingleplayer) return false
-		if (mc.thePlayer.clientBrand?.contains(".fun", true) == false) return false
         val objective = mc.thePlayer.worldScoreboard.getObjectiveInDisplaySlot(1) ?: return false
 		return stripColorCodes(objective.displayName).contains("skyblock", true)
 	}
